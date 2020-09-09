@@ -18,9 +18,9 @@ metadata:
     app.kubernetes.io/name: my-pod
 spec:
   containers:
-  - name: ubuntu
-    image: quay.io/cybozu/ubuntu:18.04
-    command: ["/usr/local/bin/pause"]
+  - name: busybox
+    image: busybox
+    command: ["sleep", "3600" ]
     volumeMounts:
     - mountPath: /test1
       name: my-volume

@@ -83,6 +83,23 @@ spec:
   - name: v1
     served: true
     storage: true
+  additionalPrinterColumns:
+  - name: Capacity
+    type: string
+    description: capacity
+    JSONPath: .spec.size
+  - name: Allocation
+    type: string
+    description: allocation
+    JSONPath: .status.currentSize
+  - name: NodeName
+    type: string
+    description: data location
+    JSONPath: .spec.nodeName
+  - JSONPath: .metadata.creationTimestamp
+    description: Age of the PlatformCredentialsSet
+    name: Age
+    type: date
 status:
   acceptedNames:
     kind: ""
